@@ -1,0 +1,6 @@
+L'header file bexp.h dichiara alcuni tipi e funzioni intesi a specificare un sistema chiamato bexp per il calcolo 
+di espressioni con numeri binari. 
+
+Task 1) Implementa due funzioni bexp_length e bexp_evaluate dichiarate e documentate nell'header file bexp.h . 
+Scrivi la tua implementazione in un file chiamato bexp.c . 
+ 
