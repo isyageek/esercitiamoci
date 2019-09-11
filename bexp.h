@@ -10,6 +10,10 @@
 * significant one specified in the sequence are assumed to be 0. A
 * valid value must contain only ’0’ and ’1’ characters.
 */
+/* !!! We are reading the from left to right. Therefore the begin is
+ * the least significant bit, therefore 2^0, and the end is the 
+ * most significan bit, therefore 2^n. 
+ * */
 typedef struct {
     char * begin; /* pointer to least significant bit */
     char * end; /* pointer to one-past most significant bit */
@@ -28,6 +32,9 @@ typedef enum {
     /* Unary operators: */
     NOT, /* ! logical negation: value==0 => 1, otherwise 0 */
     COMPLEMENT, /* ~ complement: bitwise not */
+    /* char == '0' --> in bit == 00000000 --> ~00000000 == 11111111 == '255' ??? 
+     * char == '1' --> in bit == 00000001 --> ~00000001 == 11111110 == '254' ??? 
+     * */
 } operator_t;
 
 typedef struct {
