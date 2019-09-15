@@ -1,0 +1,24 @@
+Esercizio 2) 
+In un file chiamato strstack.c crea un modulo che implementa uno stack di stringhe (zero-terminated array di caratteri)
+come definito dalle operazioni dichiarate nell'header file strstack.h
+
+#ifndef STRSTACK_H_INCLUDED
+#define STRSTACK_H_INCLUDED
+#include <stddef.h> /* declares size_t */
+
+extern void strstack_use_buffer(char * mem, size_t mem_size);
+extern void strstack_clear();
+extern int strstack_push(const char * s);
+extern const char * strstack_pop();
+
+#endif
+
+La memoria necessaria allo stack non deve essere allocata in strstack.c ma viene fornita dalla applicazione 
+tramite le funzione strstack_use_buffer. Lo stack supporta le seguanti tre operazioni: 
+- strstack_clear inizializza lo stack, ovvero risulta in uno stack vuoto.
+- strstack_push spinge/carica una data stringa sullo stack, ritornando 1 se l'operazione ha avuto successo e 0 altrimenti. 
+- strstack_pop estrae la stringa top-of-stack, ritornando 0 se lo stack è vuoto. La stringa estratta è valida solo fino 
+  a quando una delle funzioni dello stack (clear, push o pop) viene chiamata. 
+
+Il programma test_strstack.c allegato è un test per il modulo strstack. Usalo per testare la tua implementazione. 
+L'esercizio risulta corretto se passa il test. 
