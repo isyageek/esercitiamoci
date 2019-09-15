@@ -23,7 +23,7 @@ int main() {
     int i;
 
 #if STRSTACK_USES_EXTERNAL_MEMORY
-    char * stack_memory = malloc(10000);
+    char * stack_memory = malloc(10000); /* 10000 char */
     assert(stack_memory);
 
     assert(!strstack_push(""));
